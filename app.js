@@ -96,3 +96,39 @@ app.post("/login", async (request, response) => {
 app.get('/', (req, res)=>{
     res.json({message: 'it is the main domain for the EMO.Energy company assignment'})
 })
+
+
+
+app.get('/register', async (req, res)=>{
+    try {
+       const getSQLQuery = `select * from user;`;
+        const result = await db.all(getSQLQuery)
+        res.send(result)
+    } catch (e) {
+        res.status(500).json({error: `Internal Server Error: ${e.message}`})
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
